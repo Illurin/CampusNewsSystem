@@ -1,0 +1,31 @@
+﻿@{
+	ViewData["Title"] = "注册";
+}
+
+<h2>用户注册</h2>
+
+<form method="post">
+	<div>
+		<label>电子邮箱</label>
+		<input type="email" name="email" required />
+	</div>
+	<div>
+		<label>密码</label>
+		<input type="password" name="password" required />
+	</div>
+	<div>
+		<label>选择身份</label>
+		<select name="role">
+			<option value="User">普通用户</option>
+			<option value="Admin">管理员</option>
+		</select>
+	</div>
+	<button type="submit">注册</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+	<div style="color:red;">
+		@Html.ValidationSummary()
+	</div>
+}

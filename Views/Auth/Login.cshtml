@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "登录";
+}
+
+<h2>用户登录</h2>
+
+<form method="post">
+    <div>
+        <label>电子邮箱</label>
+        <input type="email" name="email" required />
+    </div>
+    <div>
+        <label>密码</label>
+        <input type="password" name="password" required />
+    </div>
+    <button type="submit">登录</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div style="color:red;">@Html.ValidationSummary()</div>
+}

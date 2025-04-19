@@ -1,0 +1,28 @@
+﻿@model CampusNewsSystem.Models.News
+
+@{
+	ViewData["Title"] = "发布新闻";
+}
+
+<h2>发布新闻</h2>
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+	<div class="mb-3">
+		<label asp-for="Title" class="form-label">标题</label>
+		<input asp-for="Title" class="form-control" />
+		<span asp-validation-for="Title" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Content" class="form-label">内容</label>
+		<textarea asp-for="Content" class="form-control" rows="6"></textarea>
+		<span asp-validation-for="Content" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">上传图片（可选）</label>
+		<input type="file" name="image" class="form-control" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">发布</button>
+</form>
